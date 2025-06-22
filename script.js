@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('#grid-container');
 
-const numberOfGridBoxes = 50;
+const numberOfGridBoxes = 532;
 
 for (let i = 0; i < numberOfGridBoxes; i++) {
     const gridBox = document.createElement('div');
