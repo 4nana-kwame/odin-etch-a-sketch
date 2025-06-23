@@ -1,7 +1,7 @@
 const gridContainer = document.querySelector('#grid-container');
 
 // Width of grid container in CSS file
-const containerWidth = 500;
+const containerWidth = 400;
 
 function buildGridBox(rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
