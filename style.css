@@ -5,22 +5,15 @@
 }
 
 #grid-container {
-    height: 400px;
-    width: 960px;
-    border: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
+    width: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: hidden;
 }
 
 .box {
-    width: 16px;
-    height: 16px;
     border: 1px solid #000;
-    margin: 0;
 }
