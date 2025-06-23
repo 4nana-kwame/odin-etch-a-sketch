@@ -11,18 +11,14 @@ function buildGridBox(rows, cols) {
         gridBox.style.width = `${containerWidth/cols}px`;
         gridBox.style.height = `${containerWidth/rows}px`;
         gridContainer.appendChild(gridBox);
+
+        gridBox.addEventListener('mouseenter', () => {
+            gridBox.style.backgroundColor = 'black';
+        })
     }
 }
 
 buildGridBox(16, 16);
-
-gridContainer.addEventListener('mousemove', (event) => {
-    const target = event.target;
-
-    if (target.classList.contains('box')) {
-        target.style.backgroundColor = 'black';
-    }
-});
 
 function promptUser() {
     gridContainer.innerHTML = '';
