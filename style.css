@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -12,8 +16,43 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 18px;
 }
 
 .box {
     border: 1px solid #000;
+}
+
+#heading-container {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+#prompt {
+    padding: 8px;
+    width: 120px;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #052eb4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+#prompt:hover {
+    background-color: #042075;
+}
+
+#prompt:active {
+    background-color: #385dd8;
 }
