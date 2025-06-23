@@ -28,7 +28,7 @@ function promptUser() {
     // Convert the input to number
     const inputToNumber = Number(gridBoxSize);
 
-    if (inputToNumber > 100 || inputToNumber < 1) {
+    if (!input || inputToNumber > 100 || inputToNumber < 1) {
         alert('Enter a valid number.');
         buildGridBox(16, 16);
     } else {
