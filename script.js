@@ -13,8 +13,26 @@ function buildGridBox(rows, cols) {
         gridContainer.appendChild(gridBox);
 
         gridBox.addEventListener('mouseenter', () => {
-            gridBox.style.backgroundColor = 'black';
-        })
+            // Assign color for the first time
+            if (!gridBox.dataset.color) {
+                const r = Math.floor(Math.random() * 256) + 1;
+                const g = Math.floor(Math.random() * 256) + 1;
+                const b = Math.floor(Math.random() * 256) + 1;
+
+                gridBox.dataset.color = `rgb(${r}, ${g}, ${b})`;
+                gridBox.dataset.opacity = '0.1';
+            } else {
+                let currentOpacity = parseFloat(gridBox.dataset.opacity);
+
+                if (currentOpacity < 1) {
+                    currentOpacity += 0.1;
+                    gridBox.dataset.opacity = currentOpacity;
+                }
+            }
+
+            gridBox.style.backgroundColor = gridBox.dataset.color;
+            gridBox.style.opacity = gridBox.dataset.opacity;
+        });
     }
 }
 
@@ -28,9 +46,10 @@ function promptUser() {
     // Convert the input to number
     const inputToNumber = Number(gridBoxSize);
 
-    if (!input || inputToNumber > 100 || inputToNumber < 1) {
+    if (!inputToNumber || inputToNumber > 100 || inputToNumber < 1) {
         alert('Enter a valid number.');
         buildGridBox(16, 16);
+        return;
     } else {
         buildGridBox(inputToNumber,inputToNumber);
     }
