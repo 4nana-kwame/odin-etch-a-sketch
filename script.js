@@ -20,7 +20,7 @@ function buildGridBox(rows, cols) {
                 const b = Math.floor(Math.random() * 256) + 1;
 
                 gridBox.dataset.color = `rgb(${r}, ${g}, ${b})`;
-                gridBox.dataset.opacity = '0.1';
+                gridBox.dataset.opacity = '0.5';
             } else {
                 let currentOpacity = parseFloat(gridBox.dataset.opacity);
 
