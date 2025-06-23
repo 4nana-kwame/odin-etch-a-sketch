@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector('#grid-container');
+const btnPrompt = document.querySelector('#prompt');
 
 // Width of grid container in CSS file
 const containerWidth = 400;
@@ -22,3 +23,19 @@ gridContainer.addEventListener('mousemove', (event) => {
         target.style.backgroundColor = 'black';
     }
 });
+
+function promptUser() {
+    gridContainer.innerHTML = '';
+
+    const gridBoxSize = prompt('Enter the grid size you  prefer (From 1-100)');
+
+    // Convert the input to number
+    const inputToNumber = Number(gridBoxSize);
+
+    if (inputToNumber > 100 || inputToNumber < 1) {
+        alert('Enter a valid number.');
+        buildGridBox(16, 16);
+    } else {
+        buildGridBox(inputToNumber,inputToNumber);
+    }
+}
